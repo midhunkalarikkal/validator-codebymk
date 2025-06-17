@@ -52,22 +52,22 @@ const testCases: {
         },
         {
             // ✅ OTP with 5 characters and alphabets allowed
-            input: ["1a2b3", { alphabets: true, minLength: 5 }],
+            input: ["1a2b3", { alphabets: true, length: 5 }],
             expected: "Valid.",
         },
         {
             // ✅ OTP with exact custom maxLength
-            input: ["12345678", { maxLength: 8 }],
+            input: ["12345678", { length: 8 }],
             expected: "Valid.",
         },
         {
             // ❌ Too short with custom minLength
-            input: ["123", { minLength: 5 }],
-            expected: "OTP must be at least 5 characters long.",
+            input: ["123", { length: 5 }],
+            expected: "OTP must be 5 characters long.",
         },
         {
             // ❌ Too long with custom maxLength
-            input: ["1234567", { maxLength: 6 }],
+            input: ["1234567", { length: 6 }],
             expected: "OTP must not exceed 6 characters.",
         },
     ];

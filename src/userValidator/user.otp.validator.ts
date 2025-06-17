@@ -8,8 +8,7 @@ export function validateOtp(
   options?: validateOtpInterface
 ): CommonReturn {
   const {
-    minLength = 4,
-    maxLength = 6,
+    length = 4,
     alphabets = false,
   } = options || {};
 
@@ -27,17 +26,10 @@ export function validateOtp(
     };
   }
 
-  if (otp.length < minLength) {
+  if (otp.length !== length) {
     return {
       status: false,
-      message: `OTP must be at least ${minLength} characters long.`,
-    };
-  }
-
-  if (otp.length > maxLength) {
-    return {
-      status: false,
-      message: `OTP must not exceed ${maxLength} characters.`,
+      message: `OTP must be ${length} characters long.`,
     };
   }
 

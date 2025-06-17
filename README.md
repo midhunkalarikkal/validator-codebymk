@@ -16,11 +16,9 @@ A lightweight and customizable validation utility for validating user inputs suc
 |                    | `maxLength`          | `number`  | `30`        | Maximum character length                                   |
 |                    | `uppercase`          | `boolean` | `true`      | Whether uppercase letters are allowed                      |
 |                    | `allowSpace`         | `boolean` | `true`      | Whether spaces are allowed                                 |
-| `validateOtp`      | `minLength`          | `number`  | `4`         | Minimum OTP length                                         |
-|                    | `maxLength`          | `number`  | `6`         | Maximum OTP length                                         |
+| `validateOtp`      | `length`             | `number`  | `4`         | Minimum OTP length                                         |
 |                    | `alphabets`          | `boolean` | `false`     | Allow alphabets in OTP                                     |
-| `validatePhone`    | `minLength`          | `number`  | `10`        | Minimum digits in phone number                             |
-|                    | `maxLength`          | `number`  | `10`        | Maximum digits in phone number                             |
+| `validatePhone`    | `length`             | `number`  | `10`        | Minimum digits in phone number                             |
 |                    | `requireCountryCode` | `boolean` | `false`     | Require phone number to begin with a country code          |
 |                    | `countryName`        | `string?` | `undefined` | Country name for validating the country code (if required) |
 | `validateEmail`    | *No options*         | –         | –           | Validates format using standard regex                      |

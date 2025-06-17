@@ -31,6 +31,11 @@ const testCases: {
             expected: "Valid phone number.",
         },
         {
+            // ✅ Valid phone with country code (+91) and correct countryName = India
+            input: ["919876543210", { length: 12 }],
+            expected: "Valid.",
+        },
+        {
             // ❌ Missing country code, but requireCountryCode is true
             input: ["9876543210", { requireCountryCode: true, countryName: "India" }],
             expected: "Phone number must start with country code +91 for India.",

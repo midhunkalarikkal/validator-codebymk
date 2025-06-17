@@ -2,8 +2,7 @@ import { CommonReturn, countryCodes, ValidatePhoneOptions } from "../interface";
 
 export function validatePhone(phone: string, options?: ValidatePhoneOptions): CommonReturn {
   const {
-    minLength = 10,
-    maxLength = 10,
+    length = 10,
     requireCountryCode = false,
     countryName,
   } = options || {};
@@ -49,17 +48,10 @@ export function validatePhone(phone: string, options?: ValidatePhoneOptions): Co
     };
   }
 
-  if (phoneNumber.length < minLength) {
+  if (phoneNumber.length !== length) {
     return {
       status: false,
-      message: `Phone number must be at least ${minLength} digits.`,
-    };
-  }
-
-  if (phoneNumber.length > maxLength) {
-    return {
-      status: false,
-      message: `Phone number must not exceed ${maxLength} digits.`,
+      message: `Phone number must be ${length} digits.`,
     };
   }
 
