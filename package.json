@@ -1,0 +1,33 @@
+{
+  "name": "validator-codebymk",
+  "version": "1.0.0",
+  "description": "Input validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx test.ts",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm,cjs --dts"
+  },
+  "exports": {
+  ".": {
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  }
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midhunkalarikkal/validator-codebymk.git"
+  },
+  "author": "midhunkalarikkal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/midhunkalarikkal/validator-codebymk/issues"
+  },
+  "homepage": "https://github.com/midhunkalarikkal/validator-codebymk#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

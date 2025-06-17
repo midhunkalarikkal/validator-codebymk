@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Testing
+coverage/
+test-results/
+
+# Output from bundlers like tsup
+*.js
+*.cjs
+*.mjs
+*.d.ts
+*.map
+
+# npm package files
+*.tgz
+
+# Optional if you're using a package like `tsup` to emit ESM + CJS
+esm/
+cjs/
+
+# OS-specific
+Thumbs.db
