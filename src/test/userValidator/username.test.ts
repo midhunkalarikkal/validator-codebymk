@@ -1,17 +1,17 @@
-import { validateUserName } from "..";
-import { TestCase } from "../interface";
+import { TestCase, validateUsernameameInterface } from "../../interface";
+import { validateUsername } from "../../userValidator";
 
-const testCases: TestCase[]  = [
+const testCases: TestCase<validateUsernameameInterface>[]  = [
   {
-    input: ["ab", {}],
+    input: ["ab"],
     expected: "Username must be at least 4 characters long.",
   },
   {
-    input: ["a".repeat(31), {}],
+    input: ["a".repeat(31)],
     expected: "Username must not exceed 30 characters.",
   },
   {
-    input: ["Midhun", {},],
+    input: ["Midhun"],
     expected: "Uppercase letters are not allowed in username.",
   },
   {
@@ -46,11 +46,15 @@ const testCases: TestCase[]  = [
     input: ["Midhun1@", { uppercase: true, digits: true, specialCharacters: true }],
     expected: "Only '.', '-', and '_' are allowed as special characters.",
   },
+  {
+  input: ["midh un"],
+  expected: "Spaces are not allowed in username.",
+},
 ];
 
 for (const [i, testCase] of testCases.entries()) {
   const [username, options] = testCase.input;
-  const result = validateUserName(username, options);
+  const result = validateUsername(username, options);
   const status = typeof result === "string" ? result : result.message;
 
   console.log(

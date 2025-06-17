@@ -1,10 +1,7 @@
 
-export interface validateUserNameInterface {
-    minimumLength?: number;
-    maximumLength?: number;
-    uppercase?: boolean;
-    digits?: boolean;
-    specialCharacters?: boolean;
+interface CommonInterface {
+    minLength?: number;
+    maxLength?: number;
 }
 
 export interface CommonReturn {
@@ -18,7 +15,23 @@ export interface RuleCheck {
     message: string;
 }
 
-export type TestCase = {
-  input: [string, validateUserNameInterface?];
+export interface TestCase<T> {
+  input: [string, T?];
   expected: string;
-};
+}
+
+//// **** User Validation **** \\\\
+
+export interface validateUsernameameInterface extends CommonInterface{
+    uppercase?: boolean;
+    digits?: boolean;
+    specialCharacters?: boolean;
+}
+
+export interface validateFullnameInterface extends CommonInterface{
+    uppercase?: boolean;
+    allowSpace?: boolean;
+}
+
+
+
