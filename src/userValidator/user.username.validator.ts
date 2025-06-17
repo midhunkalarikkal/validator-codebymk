@@ -1,5 +1,6 @@
 //// **** Username **** \\\\
 
+import { checkLoop } from "../helper";
 import { CommonReturn, RuleCheck, validateUsernameameInterface,  } from "../interface";
 
 export function validateUsername(
@@ -15,17 +16,31 @@ export function validateUsername(
         specialCharacters = true,
     } = options || {};
 
+    if (!username || username === "") {
+        return {
+            status: false,
+            message: "Give a username.",
+        };
+    }
+
+    if (typeof username !== "string") {
+        return {
+            status: false,
+            message: "Username must be a string.",
+        };
+    }
+
     if (username.length < minLength) {
         return {
             status: false,
-            message: `Username must be at least ${minLength} characters long.`
+            message: `Username must be at least ${minLength} characters long.`,
         };
     }
 
     if (username.length > maxLength) {
         return {
             status: false,
-            message: `Username must not exceed ${maxLength} characters.`
+            message: `Username must not exceed ${maxLength} characters.`,
         };
     }
 
@@ -57,17 +72,5 @@ export function validateUsername(
         },
     ];
 
-    for (const rule of rules) {
-        if (rule.active && rule.test.test(username)) {
-            return {
-                status: false,
-                message: rule.message,
-            };
-        }
-    }
-
-    return {
-        status: true,
-        message: "Valid username."
-    };
+    return checkLoop(rules, username);
 }

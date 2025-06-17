@@ -1,5 +1,6 @@
 //// **** Fullname **** \\\\
-    
+
+import { checkLoop } from "../helper";
 import { CommonReturn, RuleCheck, validateFullnameInterface } from "../interface";
 
 export function validateFullname(
@@ -13,6 +14,20 @@ export function validateFullname(
         uppercase = true,
         allowSpace = true,
     } = options || {};
+
+    if (!fullname || fullname === "") {
+        return {
+            status: false,
+            message: "Give a fullname.",
+        };
+    }
+
+    if (typeof fullname !== "string") {
+        return {
+            status: false,
+            message: "Fullname must be a string.",
+        };
+    }
 
     if (fullname.length < minLength) {
         return {
@@ -51,17 +66,6 @@ export function validateFullname(
         },
     ];
 
-    for (const rule of rules) {
-        if (rule.active && rule.test.test(fullname)) {
-            return {
-                status: false,
-                message: rule.message,
-            };
-        }
-    }
+    return checkLoop(rules, fullname);
 
-    return {
-        status: true,
-        message: "Valid fullname."
-    };
 }

@@ -33,5 +33,27 @@ export interface validateFullnameInterface extends CommonInterface{
     allowSpace?: boolean;
 }
 
+export interface validateOtpInterface extends CommonInterface{
+  alphabets?: boolean;
+}
+
+export interface ValidatePhoneOptions extends CommonInterface {
+  requireCountryCode?: boolean;
+  countryName?: string;
+}
+
+export const countryCodes: Record<string, string> = {
+  "India": "+91",
+  "United States": "+1",
+  "United Kingdom": "+44",
+  "Australia": "+61",
+  "Germany": "+49",
+  "France": "+33",
+  "Canada": "+1",
+  "China": "+86",
+  "Japan": "+81",
+  "Brazil": "+55"
+};
+
 
 
