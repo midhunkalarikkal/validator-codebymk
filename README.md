@@ -5,20 +5,31 @@ A lightweight and customizable validation utility for validating user inputs suc
 ---
 ### Validator Options Reference
 
-| **Function**       | **Option**           | **Type**  | **Default** | **Description**                                            |
-| ------------------ | -------------------- | --------- | ----------- | ---------------------------------------------------------- |
-| `validateUsername` | `minLength`          | `number`  | `4`         | Minimum allowed characters                                 |
-|                    | `maxLength`          | `number`  | `30`        | Maximum allowed characters                                 |
-|                    | `uppercase`          | `boolean` | `false`     | Whether uppercase letters are allowed                      |
-|                    | `digits`             | `boolean` | `true`      | Whether digits are allowed                                 |
-|                    | `specialCharacters`  | `boolean` | `true`      | Allow special characters `.`, `_`, and `-`                 |
-| `validateFullname` | `minLength`          | `number`  | `6`         | Minimum character length                                   |
-|                    | `maxLength`          | `number`  | `30`        | Maximum character length                                   |
-|                    | `uppercase`          | `boolean` | `true`      | Whether uppercase letters are allowed                      |
-|                    | `allowSpace`         | `boolean` | `true`      | Whether spaces are allowed                                 |
-| `validateOtp`      | `length`             | `number`  | `4`         | OTP length                                                 |
-|                    | `alphabets`          | `boolean` | `false`     | Allow alphabets in OTP                                     |
-| `validatePhone`    | `length`             | `number`  | `10`        | Digits in phone number                                     |
-|                    | `requireCountryCode` | `boolean` | `false`     | Require phone number to begin with a country code          |
-|                    | `countryName`        | `string?` | `undefined` | Country name for validating the country code (if required) |
-| `validateEmail`    | *No options*         | –         | –           | Validates format using standard regex                      |
+| **Function**         | **Option**                 | **Type**  | **Default** | **Description**                                              |
+| -------------------- | ------------------------   | --------- | ----------- | ------------------------------------------------------------ |
+| `validateUsername`   | `minLength`                | `number`  | `4`         | Minimum allowed characters                                   |
+|                      | `maxLength`                | `number`  | `30`        | Maximum allowed characters                                   |
+|                      | `uppercase`                | `boolean` | `false`     | Whether uppercase letters are allowed                        |
+|                      | `digits`                   | `boolean` | `true`      | Whether digits are allowed                                   |
+|                      | `specialCharacters`        | `boolean` | `true`      | Allow special characters `.`, `_`, and `-`                   |
+| `validateFullname`   | `minLength`                | `number`  | `6`         | Minimum character length                                     |
+|                      | `maxLength`                | `number`  | `30`        | Maximum character length                                     |
+|                      | `uppercase`                | `boolean` | `true`      | Whether uppercase letters are allowed                        |
+|                      | `allowSpace`               | `boolean` | `true`      | Whether spaces are allowed                                   |
+| `validateOtp`        | `length`                   | `number`  | `4`         | OTP length                                                   |
+|                      | `alphabets`                | `boolean` | `false`     | Allow alphabets in OTP                                       |
+| `validatePhone`      | `length`                   | `number`  | `10`        | Digits in phone number                                       |
+|                      | `requireCountryCode`       | `boolean` | `false`     | Require phone number to begin with a country code            |
+|                      | `countryName`              | `string?` | `undefined` | Country name for validating the country code (if required)   |
+| `validateEmail`      | *No options*               | –         | –           | Validates format using standard regex                        |
+| `validatePassword`   | `minLength`                | `number`  | `6`         | Minimum number of characters in the password                 |
+|                      | `maxLength`                | `number`  | `32`        | Maximum allowed characters in the password                   |
+|                      | `minLowercase`             | `number`  | `1`         | Minimum number of lowercase letters required                 |
+|                      | `minUppercase`             | `number`  | `1`         | Minimum number of uppercase letters required                 |
+|                      | `minDigits`                | `number`  | `1`         | Minimum number of digits required                            |
+|                      | `minSpecialCharacter`      | `number`  | `1`         | Minimum number of special characters required                |
+|                      | `returnPoint`              | `boolean` | `false`     | Return score based on password complexity                    |
+|                      | `pointsForLowercase`       | `number`  | `25`        | Score weight for lowercase characters                        |
+|                      | `pointsForUppercase`       | `number`  | `25`        | Score weight for uppercase characters                        |
+|                      | `pointsForDigits`          | `number`  | `25`        | Score weight fordigits                                       |
+|                      | `pointsForSpecialCharacter`| `number`  | `25`        | Score weight for special characters                          |

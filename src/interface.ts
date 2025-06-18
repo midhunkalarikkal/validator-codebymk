@@ -57,5 +57,18 @@ export const countryCodes: Record<string, string> = {
     "Brazil": "+55"
 };
 
+export interface validatePasswordInterface {
+  minLength?: number;
+  maxLength?: number;
+  minLowercase?: number;
+  minUppercase?: number;
+  minSpecialCharacter?: number;
+  minDigits?: number;
+  pointsForUppercase?: number; // 25 / 100
+  pointsForLowercase?: number; // 25 / 100
+  pointsForSpecialCharacter?: number; // 25 / 100
+  pointsForDigits?: number; // 25 / 100
+  returnPoint?: boolean;
+}
 
 

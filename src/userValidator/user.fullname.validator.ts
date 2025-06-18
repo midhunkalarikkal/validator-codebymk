@@ -1,7 +1,7 @@
 //// **** Fullname **** \\\\
 
-import { checkLoop } from "../helper";
 import { CommonReturn, RuleCheck, validateFullnameInterface } from "../interface";
+import { checkLoop } from "../utils/checkLoop";
 
 export function validateFullname(
     fullname: string,
