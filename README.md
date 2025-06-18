@@ -9,6 +9,15 @@ A lightweight and customizable validation utility for validating user inputs suc
 npm install validator-codebymk
 ```
 
+## 🤝 Want To Contribute?
+
+We welcome community contributions!
+
+Please read our [CONTRIBUTING.md](https://github.com/midhunkalarikkal/validator-codebymk/blob/main/CONTRIBUTING.md) for guidelines on how to get started.
+
+Feel free to fork the repo, create a branch, and submit a pull request 🚀
+
+
 ### 🧪 Validator Options Reference
 
 | **Function**         | **Option**                 | **Type**  | **Default** | **Description**                                              |
