@@ -49,4 +49,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ## 👨‍💻 Open Contributors
 
-<img src="https://contrib.rocks/image?repo=midhunkalarikkal/validator-codebymk" width="390" />
+<img src="https://contrib.rocks/image?repo=midhunkalarikkal/validator-codebymk" width="30" />
