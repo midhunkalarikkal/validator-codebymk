@@ -4,32 +4,32 @@ import { validateEmail } from "../../userValidator/user.email.validator";
 
 const testCases: TestCase<string>[] = [
   { 
-    question: "Valid email with standard format",
+    description: "Valid email with standard format",
     input: "midhun@email.com", 
     expected: "Valid email." 
   },
   { 
-    question: "Valid email with subdomain and plus symbol",
+    description: "Valid email with subdomain and plus symbol",
     input: "user.name+tag+sorting@example.co.in", 
     expected: "Valid email." 
   },
   { 
-    question: "Invalid: missing '@' and domain",
+    description: "Invalid: missing '@' and domain",
     input: "plainaddress", 
     expected: "Invalid email format." 
   },
   { 
-    question: "Invalid: TLD missing",
+    description: "Invalid: TLD missing",
     input: "email@.com", 
     expected: "Invalid email format." 
   },
   { 
-    question: "Invalid: TLD too short",
+    description: "Invalid: TLD too short",
     input: "email@domain", 
     expected: "Invalid email format." 
   },
   { 
-    question: "Invalid: complete junk input",
+    description: "Invalid: complete junk input",
     input: "❌❌❌", 
     expected: "Invalid email format." 
   },

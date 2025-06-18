@@ -4,72 +4,72 @@ import { validateOtp } from "../../userValidator/user.otp.validator";
 
 const testCases: TestCase<string, validateOtpInterface>[] = [
   {
-    question: "Valid OTP of 4 digits using default options",
+    description: "Valid OTP of 4 digits using default options",
     input: ["1234"],
     expected: "Valid.",
   },
   {
-    question: "Valid OTP of 6 digits when length is set to 6",
+    description: "Valid OTP of 6 digits when length is set to 6",
     input: ["123456", { length: 6 }],
     expected: "Valid.",
   },
   {
-    question: "OTP is shorter than default length of 4",
+    description: "OTP is shorter than default length of 4",
     input: ["12"],
     expected: "OTP must be 4 characters long.",
   },
   {
-    question: "OTP exceeds the specified length of 6 digits",
+    description: "OTP exceeds the specified length of 6 digits",
     input: ["1234567", { length: 6 }],
     expected: "OTP must be 6 characters long.",
   },
   {
-    question: "OTP contains alphabets when alphabets are not allowed",
+    description: "OTP contains alphabets when alphabets are not allowed",
     input: ["12ab"],
     expected: "Alphabets are not allowed in OTP.",
   },
   {
-    question: "OTP contains alphabets and alphabets are allowed",
+    description: "OTP contains alphabets and alphabets are allowed",
     input: ["ab12", { alphabets: true }],
     expected: "Valid.",
   },
   {
-    question: "OTP with alphabets and length of 10 is valid",
+    description: "OTP with alphabets and length of 10 is valid",
     input: ["ab12efgh11", { length: 10, alphabets: true }],
     expected: "Valid.",
   },
   {
-    question: "OTP contains special character and should be invalid",
+    description: "OTP contains special character and should be invalid",
     input: ["12@4"],
     expected: "Special characters are not allowed in OTP.",
   },
   {
-    question: "OTP is an empty string",
+    description: "OTP is an empty string",
     input: [""],
     expected: "Give an OTP.",
   },
   {
-    question: "OTP is a number instead of a string",
+    description: "OTP is a number instead of a string",
     input: [1234 as any],
     expected: "OTP must be a string.",
   },
   {
-    question: "OTP with 5 characters and alphabets allowed",
+    description: "OTP with 5 characters and alphabets allowed",
     input: ["1a2b3", { alphabets: true, length: 5 }],
     expected: "Valid.",
   },
   {
-    question: "OTP with exactly 8 digits and length set to 8",
+    description: "OTP with exactly 8 digits and length set to 8",
     input: ["12345678", { length: 8 }],
     expected: "Valid.",
   },
   {
-    question: "OTP is shorter than the custom length of 5",
+    description: "OTP is shorter than the custom length of 5",
     input: ["123", { length: 5 }],
     expected: "OTP must be 5 characters long.",
   },
   {
-    question: "OTP is longer than the custom length of 6",
+    description: "OTP is longer than the custom length of 6",
     input: ["1234567", { length: 6 }],
     expected: "OTP must be 6 characters long.",
   },

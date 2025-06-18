@@ -24,7 +24,7 @@
 ```bash
 const testCases: TestCase<string, YourValidatorOptionType>[] = [
   {
-    question: "Too short input",
+    description: "Too short input",
     input: ["ab", { minLength: 4 }],
     expected: "Input must be at least 4 characters long.",
   },

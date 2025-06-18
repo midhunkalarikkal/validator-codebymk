@@ -29,7 +29,7 @@ export function testCheckLoop<Value, Options = undefined>(
     
      console.log(
       `🧪 Test ${i + 1}:` +
-      `\n   ❓ Question   : ${test.question}` +
+      `\n   ❓ Description   : ${test.description}` +
       `\n   📥 Input      : ${inputLabel}` +
       `\n   🎯 Expected   : "${test.expected}"` +
       `\n   🧾 Got        : "${resultMessage}"` +

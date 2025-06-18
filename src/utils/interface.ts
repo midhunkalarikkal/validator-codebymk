@@ -16,14 +16,14 @@ export interface RuleCheck {
 }
 
 export type TestCase<Value = any, Options = undefined> = {
-  question?: string;
+  description?: string;
   input: Options extends undefined ? Value : [Value, Options?];
   expected: string;
 };
 
 
 export type GenericTestCase<Value = any, Options = any> = {
-  question?: string;
+  description?: string;
   input: Options extends undefined ? Value : [Value, Options];
   expected: string;
 };
