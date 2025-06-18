@@ -1,7 +1,7 @@
 //// **** OTP **** \\\\
 
-import { CommonReturn, RuleCheck, validateOtpInterface } from "../interface";
 import { checkLoop } from "../utils/checkLoop";
+import { CommonReturn, RuleCheck, validateOtpInterface } from "../utils/interface";
 
 export function validateOtp(
   otp: string,

@@ -1,5 +1,7 @@
+//// **** PHONE **** \\\\
+
 import { countryCodes } from "../utils/constants";
-import { CommonReturn, ValidatePhoneOptions } from "../interface";
+import { CommonReturn, ValidatePhoneOptions } from "../utils/interface";
 
 export function validatePhone(phone: string, options?: ValidatePhoneOptions): CommonReturn {
   const {

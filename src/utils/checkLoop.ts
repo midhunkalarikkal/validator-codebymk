@@ -1,4 +1,4 @@
-import { RuleCheck } from "../interface";
+import { RuleCheck } from "./interface";
 
 export function checkLoop<T extends string>(rules: RuleCheck[], value: T) {
   for (const rule of rules) {

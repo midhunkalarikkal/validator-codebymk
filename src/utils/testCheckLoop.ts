@@ -1,10 +1,7 @@
-type GenericTestCase<T = any> = {
-  input: T extends [infer U, infer V] ? [U, V?] : T;
-  expected: string;
-};
+import { TestCase } from "./interface";
 
-export function testCheckLoop<T>(
-  testCases: GenericTestCase<T>[],
+export function testCheckLoop<Value, Options = undefined>(
+  testCases: TestCase<Value, Options>[],
   title: string,
   validateFn: (...args: any[]) => { status: boolean, message: string }
 ): void {
@@ -31,11 +28,13 @@ export function testCheckLoop<T>(
     const passed = resultMessage === test.expected;
     
      console.log(
-      `🧪 Test ${i + 1}: ${passed ? "✅ PASS" : "❌ FAIL"}` +
-      `\n   📥 Input     : ${inputLabel}` +
-      `\n   🎯 Expected  : "${test.expected}"` +
-      `\n   🧾 Got       : "${resultMessage}"` +
-      `\n   📊 Result    : { status: ${result.status}, message: "${result.message}" }\n`
+      `🧪 Test ${i + 1}:` +
+      `\n   ❓ Question   : ${test.question}` +
+      `\n   📥 Input      : ${inputLabel}` +
+      `\n   🎯 Expected   : "${test.expected}"` +
+      `\n   🧾 Got        : "${resultMessage}"` +
+      `\n   📊 Result     : { status: ${result.status}, message: "${result.message}" }` +
+      `\n   ✅ Status     : ${passed ? "✅ PASS" : "❌ FAIL"}\n`
     );
   }
   console.log(`\n🏁🏁🏁  <<<<<< ✅ ${title.toUpperCase()} TESTS END ✅ >>>>>>  🏁🏁🏁\n`);

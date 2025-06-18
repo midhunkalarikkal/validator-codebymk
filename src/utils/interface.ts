@@ -15,13 +15,21 @@ export interface RuleCheck {
     message: string;
 }
 
-export interface TestCase<T> {
-    input: [string, T?];
-    expected: string;
-}
+export type TestCase<Value = any, Options = undefined> = {
+  question?: string;
+  input: Options extends undefined ? Value : [Value, Options?];
+  expected: string;
+};
+
+
+export type GenericTestCase<Value = any, Options = any> = {
+  question?: string;
+  input: Options extends undefined ? Value : [Value, Options];
+  expected: string;
+};
+
 
 //// **** User Validation **** \\\\
-
 export interface validateUsernameameInterface extends CommonInterface {
     uppercase?: boolean;
     digits?: boolean;

@@ -1,7 +1,7 @@
-//// **** Fullname **** \\\\
+//// **** FULLNAME **** \\\\
 
-import { CommonReturn, RuleCheck, validateFullnameInterface } from "../interface";
 import { checkLoop } from "../utils/checkLoop";
+import { CommonReturn, RuleCheck, validateFullnameInterface } from "../utils/interface";
 
 export function validateFullname(
     fullname: string,

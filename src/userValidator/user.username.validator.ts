@@ -1,7 +1,7 @@
-//// **** Username **** \\\\
+//// **** USERNAME **** \\\\
 
-import { CommonReturn, RuleCheck, validateUsernameameInterface,  } from "../interface";
 import { checkLoop } from "../utils/checkLoop";
+import { CommonReturn, RuleCheck, validateUsernameameInterface,  } from "../utils/interface";
 
 export function validateUsername(
     username: string,

@@ -1,4 +1,6 @@
-import { CommonReturn, validatePasswordInterface } from "../interface";
+//// **** PASSWORD **** \\\\
+
+import { CommonReturn, validatePasswordInterface } from "../utils/interface";
 
 export function validatePassword(
   password: string,

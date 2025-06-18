@@ -1,35 +1,35 @@
-import { testCheckLoop } from "../../helper";
-import { TestCase, validatePasswordInterface } from "../../interface";
+import { testCheckLoop } from "../../utils/testCheckLoop";
+import { TestCase, validatePasswordInterface } from "../../utils/interface";
 import { validatePassword } from "../../userValidator/user.password.validator";
 
-const testCases: TestCase<validatePasswordInterface>[] = [
+const testCases: TestCase<string, validatePasswordInterface>[] = [
   {
-    // ❌ too short
+    question: "Password is too short (below minLength 6)",
     input: ["abc", { minLength: 6 }],
     expected: "Password must be at least 6 characters long.",
   },
   {
-    // ❌ too long
+    question: "Password exceeds maxLength of 50 characters",
     input: ["a".repeat(51), { maxLength: 50 }],
     expected: "Password must not exceed 50 characters.",
   },
   {
-    // ❌ missing min lowercase
+    question: "Password missing required lowercase letters",
     input: ["ABC123@", { minLowercase: 1 }],
     expected: "Password must contain at least 1 lowercase letter(s).",
   },
   {
-    // ❌ missing min uppercase
+    question: "Password missing required uppercase letters",
     input: ["abc123@", { minUppercase: 1 }],
     expected: "Password must contain at least 1 uppercase letter(s).",
   },
   {
-    // ❌ missing special character
+    question: "Password missing required special characters",
     input: ["Abc1234", { minSpecialCharacter: 1 }],
     expected: "Password must contain at least 1 special character(s).",
   },
   {
-    // ✅ minimum requirements passed
+    question: "Password meets all minimum requirements",
     input: ["Abc@123", {
       minLength: 6,
       minLowercase: 1,
@@ -40,7 +40,7 @@ const testCases: TestCase<validatePasswordInterface>[] = [
     expected: "Valid.",
   },
   {
-    // ✅ custom min/max length and all requirements met
+    question: "Password with custom length and character rules passes validation",
     input: ["Midhun@2024", {
       minLength: 8,
       maxLength: 20,
@@ -52,7 +52,7 @@ const testCases: TestCase<validatePasswordInterface>[] = [
     expected: "Valid.",
   },
   {
-    // ✅ return points
+    question: "Password with scoring system enabled returns Valid",
     input: ["Test@123", {
       returnPoint: true,
       pointsForUppercase: 25,
@@ -67,7 +67,7 @@ const testCases: TestCase<validatePasswordInterface>[] = [
     expected: "Valid.",
   },
   {
-    // ✅ only numbers and specials
+    question: "Password with only digits and special characters passes",
     input: ["1234@", {
       minLowercase: 0,
       minUppercase: 0,
@@ -78,7 +78,7 @@ const testCases: TestCase<validatePasswordInterface>[] = [
     expected: "Valid.",
   },
   {
-    // ❌ missing digit when counted
+    question: "Password missing digits when required",
     input: ["Test@Pass", {
       minDigits: 1,
       returnPoint: true,
@@ -87,32 +87,32 @@ const testCases: TestCase<validatePasswordInterface>[] = [
     expected: "Password must contain at least 1 digit(s).",
   },
   {
-    // ❌ missing all and return points
+    question: "Empty password with point scoring enabled returns error",
     input: ["", {
       returnPoint: true,
     }],
     expected: "Password must be a valid string.",
   },
   {
-    // ❌ no options passed, but has invalid short length
+    question: "Password too short without any options passed",
     input: ["123"],
     expected: "Password must be at least 6 characters long.",
   },
   {
-    // ✅ default config should pass strong password
+    question: "Strong password passes with default configuration",
     input: ["Aa@123456"],
     expected: "Valid.",
   },
   {
-    // ❌ not a string
+    question: "Password is not a string (number given)",
     input: [123456 as any],
     expected: "Password must be a valid string.",
   },
   {
-    // ✅ default config should pass strong password
-    input: ["Midhun@123", {returnPoint: true}],
+    question: "Strong password with returnPoint enabled returns Valid",
+    input: ["Midhun@123", { returnPoint: true }],
     expected: "Valid.",
   },
 ];
 
-testCheckLoop(testCases,"Password", validatePassword);
+testCheckLoop(testCases, "Password", validatePassword);

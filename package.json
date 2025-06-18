@@ -4,9 +4,16 @@
   "description": "Input validator",
   "main": "index.js",
   "scripts": {
-    "test-user": "tsx src/__test__/userValidator/test.user.ts",
     "dev": "tsx watch src/index.ts",
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+
+    "test:user:all": "tsx ./src/__test__/userValidator/test.user.ts",
+    "test:username": "tsx ./src/__test__/userValidator/username.test.ts",
+    "test:fullname": "tsx ./src/__test__/userValidator/fullname.test.ts",
+    "test:email": "tsx ./src/__test__/userValidator/email.test.ts",
+    "test:otp": "tsx ./src/__test__/userValidator/otp.test.ts",
+    "test:phone": "tsx ./src/__test__/userValidator/phone.test.ts",
+    "test:password": "tsx ./src/__test__/userValidator/password.test.ts"
   },
   "exports": {
   ".": {
