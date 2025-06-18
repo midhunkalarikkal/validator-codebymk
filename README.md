@@ -41,12 +41,12 @@ npm install validator-codebymk
 |                      | `pointsForSpecialCharacter`| `number`  | `25`        | Score weight for special characters                          |
 
 
-### 📜 License: MIT
+## 📜 License: MIT
 
 MIT License
 Copyright (c) 2025 Midhun
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
 
-### 👨‍💻 Open Contributors
+## 👨‍💻 Open Contributors
 
-[@midhunkalarikkal](https://github.com/midhunkalarikkal)
+<img src="https://contrib.rocks/image?repo=midhunkalarikkal/validator-codebymk" width="390" />
