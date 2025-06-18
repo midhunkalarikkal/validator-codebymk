@@ -29,4 +29,4 @@ const testCases: { input: string; expected: string }[] = [
     },
 ];
 
-testCheckLoop(testCases, validateEmail);
+testCheckLoop(testCases,"Email", validateEmail);

@@ -4,7 +4,7 @@
   "description": "Input validator",
   "main": "index.js",
   "scripts": {
-    "test": "tsx test.ts",
+    "test-user": "tsx src/__test__/userValidator/test.user.ts",
     "dev": "tsx watch src/index.ts",
     "build": "tsup src/index.ts --format esm,cjs --dts"
   },

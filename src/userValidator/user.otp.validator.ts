@@ -31,7 +31,7 @@ export function validateOtp(
       status: false,
       message: `OTP must be ${length} characters long.`,
     };
-  }
+  } 
 
   const rules: RuleCheck[] = [
     {

@@ -115,4 +115,4 @@ const testCases: TestCase<validatePasswordInterface>[] = [
   },
 ];
 
-testCheckLoop(testCases, validatePassword);
+testCheckLoop(testCases,"Password", validatePassword);

@@ -65,4 +65,4 @@ const testCases: TestCase<validateUsernameameInterface>[] = [
   },
 ];
 
-testCheckLoop(testCases, validateUsername);
+testCheckLoop(testCases,"Username", validateUsername);

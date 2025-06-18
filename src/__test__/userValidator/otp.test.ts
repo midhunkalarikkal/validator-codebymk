@@ -12,18 +12,18 @@ const testCases: {
         },
         {
             // ✅ Valid 6-digit OTP (upper limit)
-            input: ["123456"],
+            input: ["123456", { length: 6 }],
             expected: "Valid.",
         },
         {
             // ❌ Less than minLength (default 4)
             input: ["12"],
-            expected: "OTP must be at least 4 characters long.",
+            expected: "OTP must be 4 characters long.",
         },
         {
             // ❌ More than maxLength (default 6)
-            input: ["1234567"],
-            expected: "OTP must not exceed 6 characters.",
+            input: ["1234567", { length: 6 }],
+            expected: "OTP must be 6 characters long.",
         },
         {
             // ❌ OTP contains alphabet, but `alphabets` is false
@@ -33,6 +33,11 @@ const testCases: {
         {
             // ✅ OTP with alphabet allowed
             input: ["ab12", { alphabets: true }],
+            expected: "Valid.",
+        },
+        {
+            // ✅ OTP with alphabet allowed and length
+            input: ["ab12efgh11", { length : 10, alphabets: true }],
             expected: "Valid.",
         },
         {
@@ -68,8 +73,8 @@ const testCases: {
         {
             // ❌ Too long with custom maxLength
             input: ["1234567", { length: 6 }],
-            expected: "OTP must not exceed 6 characters.",
+            expected: "OTP must be 6 characters long.",
         },
     ];
 
-testCheckLoop(testCases, validateOtp);
+testCheckLoop(testCases,"OTP", validateOtp);

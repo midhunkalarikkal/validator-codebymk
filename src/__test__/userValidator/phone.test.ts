@@ -72,4 +72,4 @@ const testCases: {
         },
     ];
 
-testCheckLoop(testCases, validatePhone);
+testCheckLoop(testCases,"Phone", validatePhone);

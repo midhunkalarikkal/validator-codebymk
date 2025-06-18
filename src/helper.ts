@@ -5,9 +5,12 @@ type GenericTestCase<T = any> = {
 
 export function testCheckLoop<T>(
   testCases: GenericTestCase<T>[],
-  validateFn: (...args: any[]) => { message: string }
+  title: string,
+  validateFn: (...args: any[]) => { status: boolean, message: string }
 ): void {
+  console.log(`\n🔍🔍🔍  <<<<<< 🔹 ${title.toUpperCase()} TESTS START 🔹 >>>>>>  🔍🔍🔍\n`);
   for (const [i, test] of testCases.entries()) {
+    
     let inputLabel: string;
     let resultMessage: string;
     let result;
@@ -24,12 +27,16 @@ export function testCheckLoop<T>(
     }
 
     
+    resultMessage = result.message;
     const passed = resultMessage === test.expected;
-    console.log(
-      `Test ${i + 1}:`,
-      passed ? "✅ Pass" : "❌ Fail",
-      `\n  ➤ Input: ${inputLabel} \n  ➤ Expected: ${test.expected}\n  ➤ Got: ${resultMessage}\n`
+    
+     console.log(
+      `🧪 Test ${i + 1}: ${passed ? "✅ PASS" : "❌ FAIL"}` +
+      `\n   📥 Input     : ${inputLabel}` +
+      `\n   🎯 Expected  : "${test.expected}"` +
+      `\n   🧾 Got       : "${resultMessage}"` +
+      `\n   📊 Result    : { status: ${result.status}, message: "${result.message}" }\n`
     );
-    console.log("result : ",result);
   }
+  console.log(`\n🏁🏁🏁  <<<<<< ✅ ${title.toUpperCase()} TESTS END ✅ >>>>>>  🏁🏁🏁\n`);
 }
