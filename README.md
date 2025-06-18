@@ -3,7 +3,13 @@
 A lightweight and customizable validation utility for validating user inputs such as username, fullname, email, OTP, and phone number.
 
 ---
-### Validator Options Reference
+
+## 📦 Installation
+```bash
+npm install validator-codebymk
+```
+
+### 🧪 Validator Options Reference
 
 | **Function**         | **Option**                 | **Type**  | **Default** | **Description**                                              |
 | -------------------- | ------------------------   | --------- | ----------- | ------------------------------------------------------------ |
@@ -33,3 +39,14 @@ A lightweight and customizable validation utility for validating user inputs suc
 |                      | `pointsForUppercase`       | `number`  | `25`        | Score weight for uppercase characters                        |
 |                      | `pointsForDigits`          | `number`  | `25`        | Score weight fordigits                                       |
 |                      | `pointsForSpecialCharacter`| `number`  | `25`        | Score weight for special characters                          |
+
+
+### 📜 License: MIT
+
+MIT License
+Copyright (c) 2025 Midhun
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
+
+### 👨‍💻 Open Contributors
+
+[@midhunkalarikkal](https://github.com/midhunkalarikkal)
