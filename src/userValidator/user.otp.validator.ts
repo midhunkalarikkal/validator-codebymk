@@ -1,11 +1,11 @@
 //// **** OTP **** \\\\
 
 import { checkLoop } from "../utils/checkLoop";
-import { CommonReturn, RuleCheck, validateOtpInterface } from "../utils/interface";
+import { CommonReturn, RuleCheck, ValidateOtpInterface } from "../utils/interface";
 
 export function validateOtp(
   otp: string,
-  options?: validateOtpInterface
+  options?: ValidateOtpInterface
 ): CommonReturn {
   const {
     length = 4,

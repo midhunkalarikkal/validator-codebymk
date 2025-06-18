@@ -1,8 +1,8 @@
 import { validateUsername } from "../../userValidator";
 import { testCheckLoop } from "../../utils/testCheckLoop";
-import { TestCase, validateUsernameameInterface } from "../../utils/interface";
+import { TestCase, ValidateUsernameameInterface } from "../../utils/interface";
 
-const testCases: TestCase<string, validateUsernameameInterface>[] = [
+const testCases: TestCase<string, ValidateUsernameameInterface>[] = [
   {
     description: "Too short username with default minLength 4",
     input: ["ab"],

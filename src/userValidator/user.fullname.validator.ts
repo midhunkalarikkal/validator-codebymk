@@ -1,11 +1,11 @@
 //// **** FULLNAME **** \\\\
 
 import { checkLoop } from "../utils/checkLoop";
-import { CommonReturn, RuleCheck, validateFullnameInterface } from "../utils/interface";
+import { CommonReturn, RuleCheck, ValidateFullnameInterface } from "../utils/interface";
 
 export function validateFullname(
     fullname: string,
-    options?: validateFullnameInterface
+    options?: ValidateFullnameInterface
 ): CommonReturn {
 
     const {

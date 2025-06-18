@@ -1,11 +1,11 @@
 //// **** USERNAME **** \\\\
 
 import { checkLoop } from "../utils/checkLoop";
-import { CommonReturn, RuleCheck, validateUsernameameInterface,  } from "../utils/interface";
+import { CommonReturn, RuleCheck, ValidateUsernameameInterface,  } from "../utils/interface";
 
 export function validateUsername(
     username: string,
-    options?: validateUsernameameInterface
+    options?: ValidateUsernameameInterface
 ): CommonReturn {
 
     const {

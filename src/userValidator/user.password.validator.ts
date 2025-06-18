@@ -1,11 +1,11 @@
 //// **** PASSWORD **** \\\\
 
-import { CommonReturn, validatePasswordInterface } from "../utils/interface";
+import { ValidatePasswordInterface, ValidatePasswordReturn } from "../utils/interface";
 
 export function validatePassword(
   password: string,
-  options?: validatePasswordInterface
-): CommonReturn {
+  options?: ValidatePasswordInterface
+): ValidatePasswordReturn {
   const {
     minLength = 6,
     maxLength = 32,

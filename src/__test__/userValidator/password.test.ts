@@ -1,8 +1,8 @@
 import { testCheckLoop } from "../../utils/testCheckLoop";
-import { TestCase, validatePasswordInterface } from "../../utils/interface";
+import { TestCase, ValidatePasswordInterface } from "../../utils/interface";
 import { validatePassword } from "../../userValidator/user.password.validator";
 
-const testCases: TestCase<string, validatePasswordInterface>[] = [
+const testCases: TestCase<string, ValidatePasswordInterface>[] = [
   {
     description: "Password is too short (below minLength 6)",
     input: ["abc", { minLength: 6 }],

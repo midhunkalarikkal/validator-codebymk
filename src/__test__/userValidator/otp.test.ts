@@ -1,8 +1,8 @@
 import { testCheckLoop } from "../../utils/testCheckLoop";
-import { TestCase, validateOtpInterface } from "../../utils/interface";
+import { TestCase, ValidateOtpInterface } from "../../utils/interface";
 import { validateOtp } from "../../userValidator/user.otp.validator";
 
-const testCases: TestCase<string, validateOtpInterface>[] = [
+const testCases: TestCase<string, ValidateOtpInterface>[] = [
   {
     description: "Valid OTP of 4 digits using default options",
     input: ["1234"],

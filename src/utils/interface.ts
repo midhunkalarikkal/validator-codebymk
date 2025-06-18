@@ -1,20 +1,23 @@
-
+// Common interface for the validate function options props
 interface CommonInterface {
     minLength?: number;
     maxLength?: number;
 }
 
+// Common return interface for validation functions
 export interface CommonReturn {
     status: boolean;
     message: string;
 }
 
+// rules array interface for the validation function
 export interface RuleCheck {
     active: boolean;
     test: RegExp;
     message: string;
 }
 
+// testcases type
 export type TestCase<Value = any, Options = undefined> = {
   description?: string;
   input: Options extends undefined ? Value : [Value, Options?];
@@ -22,37 +25,36 @@ export type TestCase<Value = any, Options = undefined> = {
 };
 
 
-export type GenericTestCase<Value = any, Options = any> = {
-  description?: string;
-  input: Options extends undefined ? Value : [Value, Options];
-  expected: string;
-};
-
-
 //// **** User Validation **** \\\\
-export interface validateUsernameameInterface extends CommonInterface {
+
+//  User usernamae validation function interface
+export interface ValidateUsernameameInterface extends CommonInterface {
     uppercase?: boolean;
     digits?: boolean;
     specialCharacters?: boolean;
 }
 
-export interface validateFullnameInterface extends CommonInterface {
+// User fullname validation function interface
+export interface ValidateFullnameInterface extends CommonInterface {
     uppercase?: boolean;
     allowSpace?: boolean;
 }
 
-export interface validateOtpInterface {
+// User otp validation function interface
+export interface ValidateOtpInterface {
     length?: number
     alphabets?: boolean;
 }
 
+// User phone validation function interface
 export interface ValidatePhoneOptions {
     length?: number;
     requireCountryCode?: boolean;
     countryName?: string;
 }
 
-export interface validatePasswordInterface extends CommonInterface{
+// User password validation function interface
+export interface ValidatePasswordInterface extends CommonInterface{
   minLowercase?: number;
   minUppercase?: number;
   minSpecialCharacter?: number;
@@ -64,4 +66,8 @@ export interface validatePasswordInterface extends CommonInterface{
   returnPoint?: boolean;
 }
 
+// User passwrod validation function return interface
+export interface ValidatePasswordReturn extends CommonReturn {
+    point?: number;
+}
 
