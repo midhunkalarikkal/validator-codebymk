@@ -1,0 +1,6 @@
+src/
+__test__/
+tsconfig.json
+tsup.config.ts
+.vscode/
+*.test.ts
