@@ -5,7 +5,8 @@ import { CommonReturn, ValidatePhoneOptions } from "../utils/interface";
 
 export function validatePhone(phone: string, options?: ValidatePhoneOptions): CommonReturn {
   const {
-    length = 10,
+    minLength = 10,
+    maxLength = 15,
     requireCountryCode = false,
     countryName,
   } = options || {};
@@ -18,7 +19,7 @@ export function validatePhone(phone: string, options?: ValidatePhoneOptions): Co
   }
 
   let phoneNumber = phone;
-  if (requireCountryCode) {
+  if (requireCountryCode && countryName !== "any") {
     if (!countryName) {
       return {
         status: false,
@@ -27,10 +28,11 @@ export function validatePhone(phone: string, options?: ValidatePhoneOptions): Co
     }
 
     const expectedCode = countryCodes[countryName];
+
     if (!expectedCode) {
       return {
         status: false,
-        message: "Invalid country name.",
+        message: `Invalid country name. Must be one country name Starting with capital letter.`,
       };
     }
 
@@ -51,10 +53,10 @@ export function validatePhone(phone: string, options?: ValidatePhoneOptions): Co
     };
   }
 
-  if (phoneNumber.length !== length) {
+  if (phoneNumber.length < minLength || phoneNumber.length > maxLength) {
     return {
       status: false,
-      message: `Phone number must be ${length} digits.`,
+      message: `Phone number must be between ${minLength} and ${maxLength} digits.`,
     };
   }
 

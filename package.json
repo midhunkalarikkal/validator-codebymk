@@ -1,6 +1,6 @@
 {
-  "name": "validator-codebymk",
-  "version": "1.0.1",
+  "name": "@codebymk/validator",
+  "version": "1.0.4",
   "description": "Input validator",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,13 @@
     "test:phone": "tsx ./src/__test__/userValidator/phone.test.ts",
     "test:password": "tsx ./src/__test__/userValidator/password.test.ts"
   },
+   "types": "./dist/index.d.ts",
   "exports": {
-  ".": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.js",
-    "types": "./dist/index.d.ts"
-  }
-},
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/midhunkalarikkal/validator-codebymk.git"

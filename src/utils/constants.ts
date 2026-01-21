@@ -197,3 +197,250 @@ export const countryCodes: Record<string, string> = {
     "Zambia": "+260",
     "Zimbabwe": "+263"
 };
+
+
+export const countryData: {
+  [countryName: string]: { code: string; minLength: number; maxLength: number };
+} = {
+  "Afghanistan": { code: "+93", minLength: 9, maxLength: 9 },
+  "Albania": { code: "+355", minLength: 8, maxLength: 9 }, // Mobile: 9, Fixed: 8
+  "Algeria": { code: "+213", minLength: 8, maxLength: 9 }, // Mobile: 9, Fixed: 8
+  "American Samoa": { code: "+1-684", minLength: 10, maxLength: 10 },
+  "Andorra": { code: "+376", minLength: 6, maxLength: 9 }, // Varies
+  "Angola": { code: "+244", minLength: 9, maxLength: 9 },
+  "Anguilla": { code: "+1-264", minLength: 10, maxLength: 10 },
+  "Antarctica": { code: "+672", minLength: 6, maxLength: 6 },
+  "Antigua and Barbuda": { code: "+1-268", minLength: 10, maxLength: 10 },
+  "Argentina": { code: "+54", minLength: 8, maxLength: 10 }, // Mobile often 10, Fixed 8
+  "Armenia": { code: "+374", minLength: 8, maxLength: 8 },
+  "Aruba": { code: "+297", minLength: 7, maxLength: 7 },
+  "Australia": { code: "+61", minLength: 8, maxLength: 9 }, // Often 9 for mobile, 8-9 for fixed
+  "Austria": { code: "+43", minLength: 7, maxLength: 12 }, // Varies
+  "Azerbaijan": { code: "+994", minLength: 9, maxLength: 9 },
+  "Bahamas": { code: "+1-242", minLength: 10, maxLength: 10 },
+  "Bahrain": { code: "+973", minLength: 8, maxLength: 8 },
+  "Bangladesh": { code: "+880", minLength: 10, maxLength: 10 },
+  "Barbados": { code: "+1-246", minLength: 10, maxLength: 10 },
+  "Belarus": { code: "+375", minLength: 9, maxLength: 9 },
+  "Belgium": { code: "+32", minLength: 8, maxLength: 9 }, // Mobile 9, Fixed 8
+  "Belize": { code: "+501", minLength: 7, maxLength: 7 },
+  "Benin": { code: "+229", minLength: 8, maxLength: 8 },
+  "Bermuda": { code: "+1-441", minLength: 10, maxLength: 10 },
+  "Bhutan": { code: "+975", minLength: 7, maxLength: 8 }, // Fixed 7, Mobile 8
+  "Bolivia": { code: "+591", minLength: 8, maxLength: 8 },
+  "Bosnia and Herzegovina": { code: "+387", minLength: 8, maxLength: 8 },
+  "Botswana": { code: "+267", minLength: 7, maxLength: 8 }, // Fixed 7, Mobile 8
+  "Brazil": { code: "+55", minLength: 10, maxLength: 11 }, // Mobile 11, Fixed 10
+  "British Indian Ocean Territory": { code: "+246", minLength: 7, maxLength: 7 },
+  "British Virgin Islands": { code: "+1-284", minLength: 10, maxLength: 10 },
+  "Brunei": { code: "+673", minLength: 7, maxLength: 7 },
+  "Bulgaria": { code: "+359", minLength: 7, maxLength: 9 }, // Varies
+  "Burkina Faso": { code: "+226", minLength: 8, maxLength: 8 },
+  "Burundi": { code: "+257", minLength: 8, maxLength: 8 },
+  "Cambodia": { code: "+855", minLength: 8, maxLength: 9 }, // Varies
+  "Cameroon": { code: "+237", minLength: 8, maxLength: 9 }, // Varies
+  "Canada": { code: "+1", minLength: 10, maxLength: 10 },
+  "Cape Verde": { code: "+238", minLength: 7, maxLength: 7 },
+  "Cayman Islands": { code: "+1-345", minLength: 10, maxLength: 10 },
+  "Central African Republic": { code: "+236", minLength: 8, maxLength: 8 },
+  "Chad": { code: "+235", minLength: 8, maxLength: 8 },
+  "Chile": { code: "+56", minLength: 8, maxLength: 9 }, // Fixed 8, Mobile 9
+  "China": { code: "+86", minLength: 11, maxLength: 11 }, // Mobile numbers typically 11 digits
+  "Christmas Island": { code: "+61", minLength: 8, maxLength: 9 }, // Shares Australia's code
+  "Cocos (Keeling) Islands": { code: "+61", minLength: 8, maxLength: 9 }, // Shares Australia's code
+  "Colombia": { code: "+57", minLength: 10, maxLength: 10 },
+  "Comoros": { code: "+269", minLength: 7, maxLength: 7 },
+  "Congo (Brazzaville)": { code: "+242", minLength: 9, maxLength: 9 },
+  "Congo (Kinshasa)": { code: "+243", minLength: 9, maxLength: 9 },
+  "Cook Islands": { code: "+682", minLength: 5, maxLength: 5 },
+  "Costa Rica": { code: "+506", minLength: 8, maxLength: 8 },
+  "Croatia": { code: "+385", minLength: 8, maxLength: 9 }, // Varies
+  "Cuba": { code: "+53", minLength: 6, maxLength: 8 }, // Varies
+  "Curaçao": { code: "+599", minLength: 7, maxLength: 7 },
+  "Cyprus": { code: "+357", minLength: 8, maxLength: 8 },
+  "Czech Republic": { code: "+420", minLength: 9, maxLength: 9 },
+  "Denmark": { code: "+45", minLength: 8, maxLength: 8 },
+  "Djibouti": { code: "+253", minLength: 8, maxLength: 8 },
+  "Dominica": { code: "+1-767", minLength: 10, maxLength: 10 },
+  "Dominican Republic": { code: "+1-809", minLength: 10, maxLength: 10 },
+  "East Timor": { code: "+670", minLength: 8, maxLength: 8 },
+  "Ecuador": { code: "+593", minLength: 9, maxLength: 9 },
+  "Egypt": { code: "+20", minLength: 10, maxLength: 10 },
+  "El Salvador": { code: "+503", minLength: 8, maxLength: 8 },
+  "Equatorial Guinea": { code: "+240", minLength: 9, maxLength: 9 },
+  "Eritrea": { code: "+291", minLength: 7, maxLength: 7 },
+  "Estonia": { code: "+372", minLength: 7, maxLength: 10 }, // Varies
+  "Eswatini": { code: "+268", minLength: 8, maxLength: 8 },
+  "Ethiopia": { code: "+251", minLength: 9, maxLength: 9 },
+  "Falkland Islands": { code: "+500", minLength: 5, maxLength: 5 },
+  "Faroe Islands": { code: "+298", minLength: 6, maxLength: 6 },
+  "Fiji": { code: "+679", minLength: 7, maxLength: 7 },
+  "Finland": { code: "+358", minLength: 7, maxLength: 12 }, // Varies
+  "France": { code: "+33", minLength: 9, maxLength: 9 },
+  "French Guiana": { code: "+594", minLength: 9, maxLength: 9 },
+  "French Polynesia": { code: "+689", minLength: 6, maxLength: 6 },
+  "Gabon": { code: "+241", minLength: 7, maxLength: 7 },
+  "Gambia": { code: "+220", minLength: 7, maxLength: 7 },
+  "Georgia": { code: "+995", minLength: 9, maxLength: 9 },
+  "Germany": { code: "+49", minLength: 7, maxLength: 13 }, // Open numbering plan, varies
+  "Ghana": { code: "+233", minLength: 9, maxLength: 9 },
+  "Gibraltar": { code: "+350", minLength: 8, maxLength: 8 },
+  "Greece": { code: "+30", minLength: 10, maxLength: 10 },
+  "Greenland": { code: "+299", minLength: 6, maxLength: 6 },
+  "Grenada": { code: "+1-473", minLength: 10, maxLength: 10 },
+  "Guadeloupe": { code: "+590", minLength: 9, maxLength: 9 },
+  "Guam": { code: "+1-671", minLength: 10, maxLength: 10 },
+  "Guatemala": { code: "+502", minLength: 8, maxLength: 8 },
+  "Guernsey": { code: "+44-1481", minLength: 10, maxLength: 10 }, // Shares UK code
+  "Guinea": { code: "+224", minLength: 8, maxLength: 9 }, // Varies
+  "Guinea-Bissau": { code: "+245", minLength: 7, maxLength: 7 },
+  "Guyana": { code: "+592", minLength: 7, maxLength: 7 },
+  "Haiti": { code: "+509", minLength: 8, maxLength: 8 },
+  "Honduras": { code: "+504", minLength: 8, maxLength: 8 },
+  "Hong Kong": { code: "+852", minLength: 8, maxLength: 8 },
+  "Hungary": { code: "+36", minLength: 8, maxLength: 9 }, // Mobile 9, Fixed 8
+  "Iceland": { code: "+354", minLength: 7, maxLength: 7 },
+  "India": { code: "+91", minLength: 10, maxLength: 10 },
+  "Indonesia": { code: "+62", minLength: 8, maxLength: 12 }, // Varies
+  "Iran": { code: "+98", minLength: 10, maxLength: 10 },
+  "Iraq": { code: "+964", minLength: 10, maxLength: 10 },
+  "Ireland": { code: "+353", minLength: 7, maxLength: 9 }, // Varies
+  "Isle of Man": { code: "+44-1624", minLength: 10, maxLength: 10 }, // Shares UK code
+  "Israel": { code: "+972", minLength: 9, maxLength: 9 },
+  "Italy": { code: "+39", minLength: 9, maxLength: 10 }, // Often 10 digits
+  "Ivory Coast": { code: "+225", minLength: 8, maxLength: 8 },
+  "Jamaica": { code: "+1-876", minLength: 10, maxLength: 10 },
+  "Japan": { code: "+81", minLength: 9, maxLength: 10 }, // Varies, mobile often 10
+  "Jersey": { code: "+44-1534", minLength: 10, maxLength: 10 }, // Shares UK code
+  "Jordan": { code: "+962", minLength: 9, maxLength: 9 },
+  "Kazakhstan": { code: "+7", minLength: 10, maxLength: 10 },
+  "Kenya": { code: "+254", minLength: 9, maxLength: 9 },
+  "Kiribati": { code: "+686", minLength: 5, maxLength: 5 },
+  "Kosovo": { code: "+383", minLength: 8, maxLength: 9 }, // Varies
+  "Kuwait": { code: "+965", minLength: 8, maxLength: 8 },
+  "Kyrgyzstan": { code: "+996", minLength: 9, maxLength: 9 },
+  "Laos": { code: "+856", minLength: 8, maxLength: 9 }, // Varies
+  "Latvia": { code: "+371", minLength: 8, maxLength: 8 },
+  "Lebanon": { code: "+961", minLength: 8, maxLength: 8 },
+  "Lesotho": { code: "+266", minLength: 8, maxLength: 8 },
+  "Liberia": { code: "+231", minLength: 7, maxLength: 8 }, // Varies
+  "Libya": { code: "+218", minLength: 9, maxLength: 9 },
+  "Liechtenstein": { code: "+423", minLength: 7, maxLength: 9 }, // Varies
+  "Lithuania": { code: "+370", minLength: 8, maxLength: 8 },
+  "Luxembourg": { code: "+352", minLength: 8, maxLength: 9 }, // Varies
+  "Macau": { code: "+853", minLength: 8, maxLength: 8 },
+  "Madagascar": { code: "+261", minLength: 9, maxLength: 9 },
+  "Malawi": { code: "+265", minLength: 8, maxLength: 9 }, // Varies
+  "Malaysia": { code: "+60", minLength: 7, maxLength: 10 }, // Varies
+  "Maldives": { code: "+960", minLength: 7, maxLength: 7 },
+  "Mali": { code: "+223", minLength: 8, maxLength: 8 },
+  "Malta": { code: "+356", minLength: 8, maxLength: 8 },
+  "Marshall Islands": { code: "+692", minLength: 7, maxLength: 7 },
+  "Mauritania": { code: "+222", minLength: 8, maxLength: 8 },
+  "Mauritius": { code: "+230", minLength: 8, maxLength: 8 },
+  "Mayotte": { code: "+262", minLength: 9, maxLength: 9 }, // Shares Reunion code
+  "Mexico": { code: "+52", minLength: 10, maxLength: 10 },
+  "Micronesia": { code: "+691", minLength: 7, maxLength: 7 },
+  "Moldova": { code: "+373", minLength: 8, maxLength: 8 },
+  "Monaco": { code: "+377", minLength: 8, maxLength: 9 }, // Varies
+  "Mongolia": { code: "+976", minLength: 8, maxLength: 8 },
+  "Montenegro": { code: "+382", minLength: 8, maxLength: 8 },
+  "Montserrat": { code: "+1-664", minLength: 10, maxLength: 10 },
+  "Morocco": { code: "+212", minLength: 9, maxLength: 9 },
+  "Mozambique": { code: "+258", minLength: 9, maxLength: 9 },
+  "Myanmar": { code: "+95", minLength: 7, maxLength: 9 }, // Varies
+  "Namibia": { code: "+264", minLength: 7, maxLength: 9 }, // Varies
+  "Nauru": { code: "+674", minLength: 7, maxLength: 7 },
+  "Nepal": { code: "+977", minLength: 8, maxLength: 10 }, // Varies
+  "Netherlands": { code: "+31", minLength: 9, maxLength: 9 },
+  "New Caledonia": { code: "+687", minLength: 6, maxLength: 6 },
+  "New Zealand": { code: "+64", minLength: 8, maxLength: 9 }, // Mobile often 9
+  "Nicaragua": { code: "+505", minLength: 8, maxLength: 8 },
+  "Niger": { code: "+227", minLength: 8, maxLength: 8 },
+  "Nigeria": { code: "+234", minLength: 10, maxLength: 10 },
+  "Niue": { code: "+683", minLength: 4, maxLength: 4 },
+  "North Korea": { code: "+850", minLength: 7, maxLength: 17 }, // Varies greatly
+  "North Macedonia": { code: "+389", minLength: 8, maxLength: 8 },
+  "Northern Mariana Islands": { code: "+1-670", minLength: 10, maxLength: 10 },
+  "Norway": { code: "+47", minLength: 8, maxLength: 8 },
+  "Oman": { code: "+968", minLength: 8, maxLength: 8 },
+  "Pakistan": { code: "+92", minLength: 10, maxLength: 10 },
+  "Palau": { code: "+680", minLength: 7, maxLength: 7 },
+  "Palestine": { code: "+970", minLength: 9, maxLength: 9 },
+  "Panama": { code: "+507", minLength: 8, maxLength: 8 },
+  "Papua New Guinea": { code: "+675", minLength: 7, maxLength: 8 }, // Varies
+  "Paraguay": { code: "+595", minLength: 9, maxLength: 9 },
+  "Peru": { code: "+51", minLength: 9, maxLength: 9 },
+  "Philippines": { code: "+63", minLength: 10, maxLength: 10 },
+  "Pitcairn Islands": { code: "+64", minLength: 7, maxLength: 7 }, // Shares NZ code
+  "Poland": { code: "+48", minLength: 9, maxLength: 9 },
+  "Portugal": { code: "+351", minLength: 9, maxLength: 9 },
+  "Puerto Rico": { code: "+1-787", minLength: 10, maxLength: 10 },
+  "Qatar": { code: "+974", minLength: 8, maxLength: 8 },
+  "Réunion": { code: "+262", minLength: 9, maxLength: 9 },
+  "Romania": { code: "+40", minLength: 9, maxLength: 9 },
+  "Russia": { code: "+7", minLength: 10, maxLength: 10 },
+  "Rwanda": { code: "+250", minLength: 9, maxLength: 9 },
+  "Saint Barthélemy": { code: "+590", minLength: 9, maxLength: 9 }, // Shares Guadeloupe code
+  "Saint Helena": { code: "+290", minLength: 4, maxLength: 4 },
+  "Saint Kitts and Nevis": { code: "+1-869", minLength: 10, maxLength: 10 },
+  "Saint Lucia": { code: "+1-758", minLength: 10, maxLength: 10 },
+  "Saint Martin (French part)": { code: "+590", minLength: 9, maxLength: 9 }, // Shares Guadeloupe code
+  "Saint Pierre and Miquelon": { code: "+508", minLength: 6, maxLength: 6 },
+  "Saint Vincent and the Grenadines": { code: "+1-784", minLength: 10, maxLength: 10 },
+  "Samoa": { code: "+685", minLength: 5, maxLength: 7 }, // Varies
+  "San Marino": { code: "+378", minLength: 6, maxLength: 10 }, // Varies
+  "Sao Tome and Principe": { code: "+239", minLength: 7, maxLength: 7 },
+  "Saudi Arabia": { code: "+966", minLength: 9, maxLength: 9 },
+  "Senegal": { code: "+221", minLength: 9, maxLength: 9 },
+  "Serbia": { code: "+381", minLength: 8, maxLength: 9 }, // Varies
+  "Seychelles": { code: "+248", minLength: 7, maxLength: 7 },
+  "Sierra Leone": { code: "+232", minLength: 8, maxLength: 8 },
+  "Singapore": { code: "+65", minLength: 8, maxLength: 8 },
+  "Sint Maarten (Dutch part)": { code: "+1-721", minLength: 10, maxLength: 10 },
+  "Slovakia": { code: "+421", minLength: 9, maxLength: 9 },
+  "Slovenia": { code: "+386", minLength: 8, maxLength: 8 },
+  "Solomon Islands": { code: "+677", minLength: 5, maxLength: 7 }, // Varies
+  "Somalia": { code: "+252", minLength: 7, maxLength: 9 }, // Varies
+  "South Africa": { code: "+27", minLength: 9, maxLength: 9 },
+  "South Korea": { code: "+82", minLength: 9, maxLength: 10 }, // Mobile 10, Fixed 9
+  "South Sudan": { code: "+211", minLength: 7, maxLength: 9 }, // Varies
+  "Spain": { code: "+34", minLength: 9, maxLength: 9 },
+  "Sri Lanka": { code: "+94", minLength: 9, maxLength: 9 },
+  "Sudan": { code: "+249", minLength: 9, maxLength: 9 },
+  "Suriname": { code: "+597", minLength: 7, maxLength: 7 },
+  "Svalbard and Jan Mayen": { code: "+47", minLength: 8, maxLength: 8 }, // Shares Norway code
+  "Sweden": { code: "+46", minLength: 7, maxLength: 13 }, // Open numbering plan, varies
+  "Switzerland": { code: "+41", minLength: 9, maxLength: 9 },
+  "Syria": { code: "+963", minLength: 9, maxLength: 9 },
+  "Taiwan": { code: "+886", minLength: 9, maxLength: 9 },
+  "Tajikistan": { code: "+992", minLength: 9, maxLength: 9 },
+  "Tanzania": { code: "+255", minLength: 9, maxLength: 9 },
+  "Thailand": { code: "+66", minLength: 9, maxLength: 9 },
+  "Timor-Leste": { code: "+670", minLength: 8, maxLength: 8 },
+  "Togo": { code: "+228", minLength: 8, maxLength: 8 },
+  "Tokelau": { code: "+690", minLength: 5, maxLength: 5 },
+  "Tonga": { code: "+676", minLength: 5, maxLength: 7 }, // Varies
+  "Trinidad and Tobago": { code: "+1-868", minLength: 10, maxLength: 10 },
+  "Tunisia": { code: "+216", minLength: 8, maxLength: 8 },
+  "Turkey": { code: "+90", minLength: 10, maxLength: 10 },
+  "Turkmenistan": { code: "+993", minLength: 8, maxLength: 8 },
+  "Turks and Caicos Islands": { code: "+1-649", minLength: 10, maxLength: 10 },
+  "Tuvalu": { code: "+688", minLength: 5, maxLength: 5 },
+  "Uganda": { code: "+256", minLength: 9, maxLength: 9 },
+  "Ukraine": { code: "+380", minLength: 9, maxLength: 9 },
+  "United Arab Emirates": { code: "+971", minLength: 9, maxLength: 9 },
+  "United Kingdom": { code: "+44", minLength: 9, maxLength: 10 }, // Mobile 10, Fixed 9-10 (depending on area code)
+  "United States": { code: "+1", minLength: 10, maxLength: 10 },
+  "Uruguay": { code: "+598", minLength: 8, maxLength: 8 },
+  "Uzbekistan": { code: "+998", minLength: 9, maxLength: 9 },
+  "Vanuatu": { code: "+678", minLength: 7, maxLength: 7 },
+  "Vatican City": { code: "+39-06", minLength: 8, maxLength: 10 }, // Shares Italy's code, but often shorter for Vatican numbers
+  "Venezuela": { code: "+58", minLength: 10, maxLength: 10 },
+  "Vietnam": { code: "+84", minLength: 9, maxLength: 10 }, // Varies, mobile often 9-10
+  "Wallis and Futuna": { code: "+681", minLength: 6, maxLength: 6 },
+  "Western Sahara": { code: "+212", minLength: 9, maxLength: 9 }, // Shares Morocco's code
+  "Yemen": { code: "+967", minLength: 7, maxLength: 9 }, // Varies
+  "Zambia": { code: "+260", minLength: 9, maxLength: 9 },
+  "Zimbabwe": { code: "+263", minLength: 7, maxLength: 9 }, // Mobile: 9, Fixed: 7
+};

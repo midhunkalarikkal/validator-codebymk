@@ -1,7 +1,7 @@
 //// **** USERNAME **** \\\\
 
 import { checkLoop } from "../utils/checkLoop";
-import { CommonReturn, RuleCheck, ValidateUsernameameInterface,  } from "../utils/interface";
+import { CommonReturn, RuleCheck, ValidateUsernameameInterface, } from "../utils/interface";
 
 export function validateUsername(
     username: string,
@@ -14,7 +14,10 @@ export function validateUsername(
         uppercase = false,
         digits = true,
         specialCharacters = true,
+        allowSpace = false,
     } = options || {};
+
+    const allowedChars = allowSpace ? /[^a-zA-Z0-9.\-_\s]/ : /[^a-zA-Z0-9.\-_]/;
 
     if (!username || username === "") {
         return {
@@ -46,7 +49,7 @@ export function validateUsername(
 
     const rules: RuleCheck[] = [
         {
-            active: true,
+            active: !allowSpace,
             test: /\s/,
             message: "Spaces are not allowed in username.",
         },
@@ -61,15 +64,24 @@ export function validateUsername(
             message: "Digits are not allowed in username.",
         },
         {
-            active: !specialCharacters,
-            test: /[^a-zA-Z0-9]/,
-            message: "Special characters are not allowed in username.",
-        },
-        {
-            active: specialCharacters,
-            test: /[^a-zA-Z0-9.\-_]/,
-            message: "Only '.', '-', and '_' are allowed as special characters.",
-        },
+            active: true,
+            test: new RegExp(
+                specialCharacters
+                    ? allowSpace
+                        ? `[^a-zA-Z0-9.\\-_\\s]`
+                        : `[^a-zA-Z0-9.\\-_]`
+                    : allowSpace
+                        ? `[^a-zA-Z0-9\\s]`
+                        : `[^a-zA-Z0-9]`
+            ),
+            message:
+                specialCharacters
+                    ? "Only '.', '-', and '_' are allowed as special characters." +
+                    (allowSpace ? " Space is allowed." : "")
+                    : allowSpace
+                        ? "Only letters, digits, and space are allowed."
+                        : "Only letters and digits are allowed.",
+        }
     ];
 
     return checkLoop(rules, username);

@@ -20,25 +20,22 @@ export function validatePassword(
     pointsForSpecialCharacter = 25,
   } = options || {};
 
+  const errors: string[] = [];
+
   if (!password || typeof password !== "string") {
     return {
       status: false,
       message: "Password must be a valid string.",
+      ...(returnPoint ? { point: 0 } : {}),
     };
   }
 
   if (password.length < minLength) {
-    return {
-      status: false,
-      message: `Password must be at least ${minLength} characters long.`,
-    };
+    errors.push(`Password must be at least ${minLength} characters long.`);
   }
 
   if (password.length > maxLength) {
-    return {
-      status: false,
-      message: `Password must not exceed ${maxLength} characters.`,
-    };
+    errors.push(`Password must not exceed ${maxLength} characters.`);
   }
 
   const lowercaseCount = (password.match(/[a-z]/g) || []).length;
@@ -46,39 +43,27 @@ export function validatePassword(
   const digitCount = (password.match(/\d/g) || []).length;
   const specialCount = (password.match(/[^a-zA-Z0-9]/g) || []).length;
 
-  if (lowercaseCount < minLowercase) {
+  let score = 0;
+
+  if (lowercaseCount >= minLowercase) score += pointsForLowercase;
+  else errors.push(`Password must contain at least ${minLowercase} lowercase letter(s).`);
+
+  if (uppercaseCount >= minUppercase) score += pointsForUppercase;
+  else errors.push(`Password must contain at least ${minUppercase} uppercase letter(s).`);
+
+  if (digitCount >= minDigits) score += pointsForDigits;
+  else errors.push(`Password must contain at least ${minDigits} digit(s).`);
+
+  if (specialCount >= minSpecialCharacter) score += pointsForSpecialCharacter;
+  else errors.push(`Password must contain at least ${minSpecialCharacter} special character(s).`);
+
+  if (errors.length > 0) {
     return {
       status: false,
-      message: `Password must contain at least ${minLowercase} lowercase letter(s).`,
+      message: errors[0],
+      ...(returnPoint ? { point: score } : {}),
     };
   }
-
-  if (uppercaseCount < minUppercase) {
-    return {
-      status: false,
-      message: `Password must contain at least ${minUppercase} uppercase letter(s).`,
-    };
-  }
-
-  if (digitCount < minDigits) {
-    return {
-      status: false,
-      message: `Password must contain at least ${minDigits} digit(s).`,
-    };
-  }
-
-  if (specialCount < minSpecialCharacter) {
-    return {
-      status: false,
-      message: `Password must contain at least ${minSpecialCharacter} special character(s).`,
-    };
-  }
-
-  const score =
-    (lowercaseCount > 0 ? pointsForLowercase : 0) +
-    (uppercaseCount > 0 ? pointsForUppercase : 0) +
-    (digitCount > 0 ? pointsForDigits : 0) +
-    (specialCount > 0 ? pointsForSpecialCharacter : 0);
 
   return {
     status: true,

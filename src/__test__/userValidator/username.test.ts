@@ -80,7 +80,12 @@ const testCases: TestCase<string, ValidateUsernameameInterface>[] = [
   },
   {
     description: "Fully valid username with all config enabled",
-    input: ["Mid_hun-22", { uppercase: true, digits: true, specialCharacters: true }],
+    input: ["Mid_hun 22", { uppercase: true, digits: true, specialCharacters: true, allowSpace: true }],
+    expected: "Valid.",
+  },
+  {
+    description: "Fully valid username with all config enabled without space",
+    input: ["mid_hun-22", { uppercase: true, digits: true, specialCharacters: true, allowSpace: false }],
     expected: "Valid.",
   },
 ];

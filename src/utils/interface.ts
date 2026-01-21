@@ -22,6 +22,7 @@ export type TestCase<Value = any, Options = undefined> = {
   description?: string;
   input: Options extends undefined ? Value : [Value, Options?];
   expected: string;
+  expectedPoint?: number;
 };
 
 
@@ -32,6 +33,7 @@ export interface ValidateUsernameameInterface extends CommonInterface {
     uppercase?: boolean;
     digits?: boolean;
     specialCharacters?: boolean;
+    allowSpace?: boolean;
 }
 
 // User fullname validation function interface
@@ -48,7 +50,8 @@ export interface ValidateOtpInterface {
 
 // User phone validation function interface
 export interface ValidatePhoneOptions {
-    length?: number;
+    minLength?: number,
+    maxLength?: number,
     requireCountryCode?: boolean;
     countryName?: string;
 }
